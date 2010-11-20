@@ -55,41 +55,40 @@ module _stepper_motor_mount(
 {
 	union()
 	{
-	// == centered mount points ==
-	//mounting circle inset
-	translate([0,slide_distance/2,0]) circle(r = pilot_diameter/2);
-	square([pilot_diameter,slide_distance],center=true);
-	translate([0,-slide_distance/2,0]) circle(r = pilot_diameter/2);
+		// == centered mount points ==
+		//mounting circle inset
+		translate([0,slide_distance/2,0]) circle(r = pilot_diameter/2);
+		//was causing segfaults.. wtf?
+		//square([pilot_diameter,slide_distance],center=true);
+		translate([0,-slide_distance/2,0]) circle(r = pilot_diameter/2);
 
-	//todo: motor shaft hole
+		//todo: motor shaft hole
 	
-	//mounting screw holes
-	for (x = [-1,1])
-	{
-		for (y = [-1,1])
+		//mounting screw holes
+		for (x = [-1,1]) for (y = [-1,1])
 		{
 			translate([x*bolt_hole_distance/2,y*bolt_hole_distance/2,0])
 			{
 				translate([0,slide_distance/2,0]) circle(bolt_hole_size/2);
 				translate([0,-slide_distance/2,0]) circle(bolt_hole_size/2);
-				square([bolt_hole_size,slide_distance],center=true);
+				//was causing segfaults.. wtf?
+				//square([bolt_hole_size,slide_distance],center=true);
+			}
+		}
+		// == motor mock-up ==
+		//motor box
+		if (mochup == true)
+		{
+			%translate([0,0,-5]) cylinder(h = 5, r = pilot_diameter/2);
+			%translate(v=[0,0,-motor_length/2])
+			{
+				cube(size=[bolt_hole_distance+bolt_hole_size+5,bolt_hole_distance+bolt_hole_size+5,motor_length], center = true);
+			}
+			//shaft
+			%translate(v=[0,0,-(motor_length-motor_shaft_length-2)/2])
+			{
+				%cylinder(r=motor_shaft_diameter/2,h=motor_length+motor_shaft_length--1, center = true);
 			}
 		}
 	}
-	// == motor mock-up ==
-	//motor box
-	if (mochup == true)
-	{
-		%translate([0,0,-5]) cylinder(h = 5, r = pilot_diameter/2);
-		%translate(v=[0,0,-motor_length/2])
-		{
-			cube(size=[bolt_hole_distance+bolt_hole_size+5,bolt_hole_distance+bolt_hole_size+5,motor_length], center = true);
-		}
-		//shaft
-		%translate(v=[0,0,-(motor_length-motor_shaft_length-2)/2])
-		{
-			%cylinder(r=motor_shaft_diameter/2,h=motor_length+motor_shaft_length--1, center = true);
-		}
-	}
-	};
 }
