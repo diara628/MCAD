@@ -2,8 +2,8 @@
 // Licensed under the MIT license.
 // © 2010 by Elmo Mäntynen
 
-include <constants.scad>
-use <math.scad>
+include <lib/mcad/constants.scad>
+use <lib/mcad/math.scad>
 
 
 /* A circular helix of radius a and pitch 2πb is described by the following parametrisation:

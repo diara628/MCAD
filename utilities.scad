@@ -5,7 +5,7 @@
  * Dual licenced under Creative Commons Attribution-Share Alike 3.0 and LGPL2 or later
  */
 
-include <units.scad>
+include <lib/mcad/units.scad>
 
 function distance(a, b) = sqrt( (a[0] - b[0])*(a[0] - b[0]) +
                                 (a[1] - b[1])*(a[1] - b[1]) +

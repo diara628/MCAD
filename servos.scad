@@ -7,7 +7,7 @@
  * License: LGPL 2.1
  */
 
-use <triangles.scad>
+use <lib/mcad/triangles.scad>
 
 /**
  * Align DS420 digital servo

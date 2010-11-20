@@ -1,6 +1,7 @@
 // License: GPL 2.0
 
-include <math.scad>
+include <lib/mcad/math.scad>
+
 
 
 //generates a motor mount for the specified nema standard #.

@@ -1,6 +1,6 @@
 // MIT license
 
-include <constants.scad>
+include <lib/mcad/constants.scad>
 
 function deg(angle) = 360*angle/TAU;
 
