@@ -5,11 +5,15 @@
  *  License: LGPL 2.1 or later
 */
 
+// 2D Shapes
+//ellipse(width, height);
 
+// 3D Shapes
 //box(width, height, depth);
 //roundedBox(width, height, depth, factor);
 //cone(height, radius);
-//oval(width, height, depth);
+//ellipticalCylinder(width, height, depth);
+//ellipsoid(width, height); 
 //tube(height, radius, wall);
 //ovalTube(width, height, depth, wall);
 //hexagon(height, depth);
@@ -41,8 +45,16 @@ module cone(height, radius, center = false) {
   cylinder(height, radius, 0, center);
 }
 
-module oval(w,h, height, center = false) {
+module ellipticalCylinder(w,h, height, center = false) {
   scale([1, h/w, 1]) cylinder(h=height, r=w, center=center);
+}
+
+module ellipse(w, h) {
+  scale([1, h/w, 1]) circle(r=w, center=center);
+}
+
+module ellipsoid(w, h) {
+  scale([1, h/w, 1]) sphere(r=w, center=center);
 }
 
 // wall is wall thickness
