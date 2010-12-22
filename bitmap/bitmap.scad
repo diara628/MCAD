@@ -423,6 +423,17 @@ module 8bit_char(char, block_size, height, include_base) {
 			0,1,1,1,1,1,1,0,
 			0,0,0,0,0,0,0,0
 		], block_size, height, 8);
+	} else if (char == "OE") {
+		bitmap([
+			0,0,1,0,0,1,0,0,
+			0,0,0,0,0,0,0,0,
+			0,0,1,1,1,1,0,0,
+			0,1,1,0,0,1,1,0,
+			0,1,1,0,0,1,1,0,
+			0,1,1,0,0,1,1,0,
+			0,1,1,0,0,1,1,0,
+			0,0,1,1,1,1,0,0
+		], block_size, height, 8);
 	} else if (char == "a") {
 		bitmap([
 			0,0,0,0,0,0,0,0,
