@@ -110,7 +110,7 @@ module rightTriangle(adjacent, opposite, height) {
   difference() {
     translate([-adjacent/2,opposite/2,0]) cube([adjacent, opposite, height], true);
     translate([-adjacent,0,0]) {
-      rotate([0,0,atan(opposite/adjacent)]) dislocateBox(adjacent*2, opposite, height);
+      rotate([0,0,atan(opposite/adjacent)]) dislocateBox(adjacent*2, opposite, height+2);
     }
   }
 }
@@ -135,13 +135,6 @@ module 12ptStar(size, height) {
 
 //-----------------------
 //MOVES THE ROTATION AXIS OF A BOX FROM ITS CENTER TO THE BOTTOM LEFT CORNER
-//FIXME: Why are the dimensions changed?
-// why not just translate([0,0,-d/2]) cube([w,h,d]);
-module dislocateBox(w,h,d) {
-  translate([w/2,h,0]) {
-    difference() {
-      cube([w, h*2, d+1]);
-      translate([-w,0,0]) cube([w, h*2, d+1]);
-    }
-  }
+module dislocateBox(w, h, d) {
+  translate([0,0,-d/2]) cube([w,h,d]);
 }
