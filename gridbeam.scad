@@ -39,13 +39,13 @@ module zBeam(segments) {
 }
 
 module xBeam(segments) {
-	translateBeam([0,0,1])
+	translate([0,0,$beam_width])
 	rotate([0,90,0])
 	zBeam(segments);
 }
 
 module yBeam(segments) {
-	translateBeam([0,0,1])
+	translate([0,0,$beam_width])
 	rotate([-90,0,0])
 	zBeam(segments);
 }
