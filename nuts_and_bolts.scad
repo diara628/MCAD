@@ -163,10 +163,11 @@ module boltHole(size, units=MM, length, tolerance = +0.0001, proj = -1)
 	capRadius = METRIC_NUT_AC_WIDTHS[size]/2+tolerance; //METRIC_BOLT_CAP_RADIUS[size]+tolerance;
 
 	if (proj == -1)
-	{
+	{ union() {
 	translate([0, 0, -capHeight])
-		cylinder(r= capRadius, h=capHeight);
+		cylinder(r= capRadius, h=capHeight+tolerance);
 	cylinder(r = radius, h = length);
+	}
 	}
 	if (proj == 1)
 	{
