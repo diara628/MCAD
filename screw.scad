@@ -2,7 +2,7 @@
 // License: GNU LGPL 2.1 or later.
 // © 2010 by Elmo Mäntynen
 
-include <curves.scad>
+include <lib/mcad/curves.scad>
 
 /* common screw parameter
 length

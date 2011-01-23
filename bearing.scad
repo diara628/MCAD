@@ -5,8 +5,8 @@
  * Dual licenced under Creative Commons Attribution-Share Alike 3.0 and LGPL2 or later
  */
 
-include <units.scad>
-include <materials.scad>
+include <lib/mcad/units.scad>
+include <lib/mcad/materials.scad>
 
 // Example, uncomment to view
 //test_bearing();
