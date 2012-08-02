@@ -10,13 +10,15 @@ See http://creativecommons.org/licenses/LGPL/2.1/ or the included file, lgpl-2.1
 
 ## Usage ##
 
-You can import these files in your scripts with `use <MCAD/*.scad>`, but some
-files include useful constants which will be available with `include <MCAD/*.scad>`,
-which should be safe to use on all included files (ie. no top level code should
-create geometry). (There is a bug/feature that prevents including constants from
-files that "include" other files - see the openscad mailing list archives for more
-details. Since the maintainers aren't very responsive, may have to work around this
-somehow)
+You can import these files in your scripts with `use <MCAD/filename.scad>`, 
+where 'filename' is one of the files listed below like 'motors' or 
+'servos'. Some files include useful constants which will be available 
+with `include <MCAD/filename.scad>`, which should be safe to use on all 
+included files (ie. no top level code should create geometry). (There is 
+a bug/feature that prevents including constants from files that 
+"include" other files - see the openscad mailing list archives for more 
+details. Since the maintainers aren't very responsive, may have to work 
+around this somehow)
 
 If you host your project in git, you can do `git submodule add URL PATH` in your
 repo to import this library as a git submodule for easy usage. Then you need to do
