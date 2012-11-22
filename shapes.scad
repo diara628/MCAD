@@ -80,11 +80,6 @@ module ovalTube(height, rx, ry, wall, center = false) {
   }
 }
 
-// The orientation might change with the implementation of circle...
-module ngon(sides, radius, center=false){
-    rotate([0, 0, 360/sides/2]) circle(r=radius, $fn=sides, center=center);
-}
-
 // size is the XY plane size, height in Z
 module hexagon(size, height) {
   boxWidth = size/1.75;
