@@ -23,15 +23,15 @@ module helix(pitch, length, slices=500){
         child(0);
 }
 
-module auger(pitch, length, outside_diameter, inner_diameter) {
+module auger(pitch, length, outside_radius, inner_radius, taper_ratio = 0.25) {
     union(){
         helix(pitch, length)
-        polygon(points=[[10,10],[100,1],[100,-1],[10,-10]], paths=[[0,1,2,3]]);
-        cylinder(h=length, r=20);
+        polygon(points=[[0,inner_radius],[outside_radius,(inner_radius * taper_ratio)],[outside_radius,(inner_radius * -1 * taper_ratio)],[0,(-1 * inner_radius)]], paths=[[0,1,2,3]]);
+        cylinder(h=length, r=inner_radius);
     }
 }
 
-module test_auger(){translate([300, 0, 0]) auger(100, 300);}
+module test_auger(){translate([50, 0, 0]) auger(40, 80, 25, 5);}
 
 
 module ball_groove(pitch, length, diameter, ball_radius=10) {
