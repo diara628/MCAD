@@ -1,0 +1,15 @@
+-- Add **kwargs to all SCAD objects so all Python-rendered SCAD functions accept
+    extra unspecified arguments, since OpenSCAD has this behavior.
+-- Add 'segments' arguments to circle(), sphere() and cylinder()? This breaks 
+    with OpenSCAD, but is simpler than circle(10).add_param('$fn', 30)
+-- Unit testing.
+-- Comprehensive docs
+-- Applescript or other inter-app communication that will recompile in OpenSCAD
+    whenever requested via your Python code
+-- Debugging info?  This isn't really present for SCAD, so it's hard from Python.
+-- Programmatic way to designate parameters users might want to change
+-- Gui for setting parameters - sliders, dropdowns, etc.  Well... that's a separate project.
+
+Completed:
+-- Add handling for the #*!% SCAD characters (debug, disable, root, background) -ETJ 15 Feb 2011
+-- Improving syntax so it's as close as possible to OpenSCAD's -ETJ 15 Feb 2011
