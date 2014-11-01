@@ -1,5 +1,5 @@
 import py
-
+import os.path
 from openscad_utils import *
 
 
@@ -8,12 +8,14 @@ temppath = py.test.ensuretemp('MCAD')
 def pytest_generate_tests(metafunc):
     if "modpath" in metafunc.funcargnames:
         for fpath, modnames in collect_test_modules().items():
+            basename = os.path.splitext(os.path.split(str(fpath))[1])[0]
             #os.system("cp %s %s/" % (fpath, temppath))
             if "modname" in metafunc.funcargnames:
                 for modname in modnames:
-                    metafunc.addcall(funcargs=dict(modname=modname, modpath=fpath))
+                    print modname
+                    metafunc.addcall(id=basename+"/"+modname, funcargs=dict(modname=modname, modpath=fpath))
             else:
-                metafunc.addcall(funcargs=dict(modpath=fpath))
+                metafunc.addcall(id=os.path.split(str(fpath))[1], funcargs=dict(modpath=fpath))
 
 
 def test_module_compile(modname, modpath):

@@ -1,8 +1,8 @@
 // Parametric curves, to be used as paths
 // Licensed under the MIT license.
 // © 2010 by Elmo Mäntynen
-use <math.scad>
-include <constants.scad>
+use <MCAD/general/math.scad>
+include <MCAD/general/constants.scad>
 
 
 
@@ -13,7 +13,7 @@ z(t) = b*t
 */
 
 
-function b(pitch) = pitch/(TAU);
+function b(pitch) = pitch/(const_tau);
 function t(pitch, z) = z/b(pitch);
 
 function helix_curve(pitch, radius, z) =

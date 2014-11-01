@@ -1,4 +1,4 @@
-import py, re, os, signal, time, commands
+import py, re, os, signal, time, commands, sys
 from subprocess import Popen, PIPE
 
 mod_re = (r"\bmodule\s+(", r")\s*\(\s*")
@@ -30,7 +30,9 @@ def collect_test_modules(dirpath=None):
 class Timeout(Exception): pass
 
 def call_openscad(path, stlpath, timeout=5):
-    command = ['openscad', '-s', str(stlpath),  str(path)]
+    if sys.platform == 'darwin': exe = 'OpenSCAD.app/Contents/MacOS/OpenSCAD'
+    else: exe = 'openscad'
+    command = [exe, '-s', str(stlpath),  str(path)]
     print command
     if timeout:
         try:
