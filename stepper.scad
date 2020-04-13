@@ -259,10 +259,10 @@ module motor(model=Nema23, size=NemaMedium, dualAxis=false, pos=[0,0,0], orienta
 
           // Bolt holes
           color(stepperAluminum, $fs=holeRadius/8) {
-            translate([mid+holeDist,mid+holeDist,-1*mm]) cylinder(h=holeDepth+1*mm, r=holeRadius);
-            translate([mid-holeDist,mid+holeDist,-1*mm]) cylinder(h=holeDepth+1*mm, r=holeRadius);
-            translate([mid+holeDist,mid-holeDist,-1*mm]) cylinder(h=holeDepth+1*mm, r=holeRadius);
-            translate([mid-holeDist,mid-holeDist,-1*mm]) cylinder(h=holeDepth+1*mm, r=holeRadius);
+            translate([mid+holeDist,mid+holeDist]) cylinder(h=holeDepth+1*mm, r=holeRadius);
+            translate([mid-holeDist,mid+holeDist]) cylinder(h=holeDepth+1*mm, r=holeRadius);
+            translate([mid+holeDist,mid-holeDist]) cylinder(h=holeDepth+1*mm, r=holeRadius);
+            translate([mid-holeDist,mid-holeDist]) cylinder(h=holeDepth+1*mm, r=holeRadius);
 
           } 
 
