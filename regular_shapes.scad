@@ -203,4 +203,4 @@ module square_pyramid(base_x, base_y,height)
 
 // Tests:
 
-test_square_pyramid(){square_pyramid(10, 20, 30);}
+module test_square_pyramid(){square_pyramid(10, 20, 30);}
