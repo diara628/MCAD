@@ -96,7 +96,7 @@ METRIC_NUT_THICKNESS =
 	29.00//m36
 ];
 
-COURSE_METRIC_BOLT_MAJOR_THREAD_DIAMETERS =
+COARSE_THREAD_METRIC_BOLT_MAJOR_DIAMETERS =
 [//based on max values
 	-1, //0 index is not used but reduces computation
 	-1,
@@ -159,7 +159,7 @@ module nutHole(size, units=MM, tolerance = +0.0001, proj = -1)
 
 module boltHole(size, units=MM, length, tolerance = +0.0001, proj = -1)
 {
-	radius = COURSE_METRIC_BOLT_MAJOR_THREAD_DIAMETERS[size]/2+tolerance;
+	radius = COARSE_THREAD_METRIC_BOLT_MAJOR_DIAMETERS[size]/2+tolerance;
 //TODO: proper screw cap values
 	capHeight = METRIC_NUT_THICKNESS[size]+tolerance; //METRIC_BOLT_CAP_HEIGHTS[size]+tolerance;
 	capRadius = METRIC_NUT_AC_WIDTHS[size]/2+tolerance; //METRIC_BOLT_CAP_RADIUS[size]+tolerance;
